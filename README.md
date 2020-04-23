@@ -16,5 +16,7 @@ $ openssl crl -inform der -text -in mycrl.crl
 ### Convert CRL from DER to PEM
 $ openssl crl -inform der -text -in mycrl-DER.crl -out mycrl-PEM.pem
 
+### Sign / Verify Files with private key
+https://www.openssl.org/docs/man1.0.2/man1/pkeyutl.html
 
 
