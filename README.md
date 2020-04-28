@@ -2,6 +2,20 @@
 OpenSSL Cheat Sheet
 
 
+### Generate RSA Private Key (AES Encrypted PEM)
+$ openssl genrsa -aes256 -out key1-priv-rsa2048.pem 2048
+$ openssl genrsa -aes256 -out key1-priv-rsa2048.pem 4096
+
+### Export Public Key
+$ openssl rsa -in key1-priv-rsa2048.pem -outform pem -pubout -out key1-pub-rsa2048.pem 
+
+### Generate P12 file (just private key no certs)
+$ openssl pkcs12 -export -aes256 -macalg sha256 -out key1.p12 -inkey key1-priv-rsa2048.pem -nocerts 
+
+### Export Private Key from P12 file
+$ openssl pkcs12 -in key1.p12 -nocerts -out myprivkey.pem
+
+
 
 ### View DER Certificate
 $ openssl x509 -inform der -in mycert.der -text 
