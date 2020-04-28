@@ -4,6 +4,7 @@ OpenSSL Cheat Sheet
 
 ### Generate RSA Private Key (AES Encrypted PEM)
 $ openssl genrsa -aes256 -out key1-priv-rsa2048.pem 2048
+
 $ openssl genrsa -aes256 -out key1-priv-rsa2048.pem 4096
 
 ### Export Public Key
