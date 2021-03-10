@@ -45,6 +45,11 @@ $ openssl crl -inform der -text -in mycrl-DER.crl -out mycrl-PEM.pem
 https://www.openssl.org/docs/man1.0.2/man1/pkeyutl.html
 
 
+## Convert to different formats
+### .pem => .pk8
+$ openssl pkcs8 -topk8 -inform PEM -outform DER -nocrypt -in pem-private-key.pem -out pk8-private-key.pk8
+
+
 ## Verify
 trust.pem is one or many trusted CA certs in pem format.  full chain is generally needed
 mycert.pem is cert to verify
